@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= title
+  form(method="post" action="/form")
+    input(type="text" name="name" placeholder="Input name")
+    input(type="text" name="email" placeholder="Input email")
+    textarea(rows="4" col="50" name="comments")
+    input(type="submit" text="Submit")

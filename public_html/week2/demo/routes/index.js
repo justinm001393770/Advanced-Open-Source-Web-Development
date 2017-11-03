@@ -19,7 +19,7 @@ router.get('/form', function(req, res, next) {
 });
 
 router.post('/form', function(req, res, next) {    
-  res.render('form', { title: req.body.email });
+  res.render('form', { title: req.body.email, email: req.body.email, name: req.body.name, comments: req.body.comments  });
 });
 
 
