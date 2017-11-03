@@ -1,0 +1,9 @@
+mixin createGrid(number)
+    table(border="1")
+        thead   
+        tbody
+          for i = 0; i < number; i++
+          -var color = ((1<<24)*Math.random()|0).toString(16);
+            tr
+                td(style="background-color: ${color}") ${color} br span(style="color: #fffffff") ${color}
+                    = stuff.author
