@@ -9,6 +9,7 @@ function sendJSONresponse(res, status, content) {
 module.exports.reviewsReadAll = function(req, res) {
         
     debug('Getting all reviews');
+    debug(req.where);
     
     var where = {};
     var options = {};
@@ -28,7 +29,7 @@ module.exports.reviewsReadAll = function(req, res) {
          * https://www.npmjs.com/package/hpp         
          * ?_sort=author&_sort=author = && typeof(req.query._sort) === 'string' 
          */
-        if (req.query._sort) {
+        if (req.query._sort && typeof(req.query._sort) === 'string') {
             var prefix = 1;
             if (req.query._sort.match(/-/)) prefix = -1;
             var field = req.query._sort.replace(/-|\s/g, '');

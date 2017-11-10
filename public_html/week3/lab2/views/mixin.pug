@@ -1,0 +1,11 @@
+mixin create404()
+  -var random = Math.floor(Math.random() * (50 - 20)) + 20;
+  - for (var i = 0; i < random; i++)
+    -var randomStyle = Math.floor(Math.random() * 3)
+    case randomStyle
+      when 0
+        div(class="shrink") 404
+      when 1
+        div(class="rotate") 404
+      when 2
+        div(class="still") 404

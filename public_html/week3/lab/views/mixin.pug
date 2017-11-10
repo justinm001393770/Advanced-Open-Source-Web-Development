@@ -2,8 +2,11 @@ mixin createGrid(number)
     table(border="1")
         thead   
         tbody
-          for i = 0; i < number; i++
-          -var color = ((1<<24)*Math.random()|0).toString(16);
+          - for (var i = 0; i < number; i++)
             tr
-                td(style="background-color: ${color}") ${color} br span(style="color: #fffffff") ${color}
-                    = stuff.author
+              - for (var j = 0; j < number; j++)
+                -var color = ((1<<24)*Math.random()|0).toString(16);
+                td(style="background-color: #" + color) #{color}
+                    br 
+                    span(style="color: #ffffff") #{color}
+                    
