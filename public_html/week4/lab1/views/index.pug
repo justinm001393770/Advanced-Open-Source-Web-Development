@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p Message: #{message}
+  a(href="../view") View
+  if error
+      ul
+        each err in error
+          li= err
+
+  form.form-horizontal(action="/", method="post", role="form")
+    input(type="text" placeholder="First Name" name="fName")
+    input(type="text" placeholder="Last Name" name="lName")
+    select(name="department")
+      option(value="accounting") Accounting
+      option(value="marketing") Marketing
+      option(value="it") Information Technology
+    input(type="date" name="startDate")
+    input(type="text" name="title" placeholder="Job Title")
+    input(type="text" name="salary" placeholder="Salary")
+    input(type="submit" value="Submit")

@@ -1,0 +1,41 @@
+extends layout
+
+block content
+    h1=title
+    p
+        a(href="../") Home
+    p=removed
+          
+    if results
+        table(border="1")
+            thead   
+                tr
+                    th First Name
+                    th Last Name
+                    th Department
+                    th Start Date
+                    th Job Title
+                    th Salary
+                    th Update
+                    th Delete
+            tbody
+              each empl in results
+                tr
+                    td 
+                        =empl.firstName
+                    td 
+                        =empl.lastName
+                    td 
+                        =empl.department
+                    td 
+                        =empl.startDate.toDateString()
+                    td  
+                        =empl.jobTitle
+                    td
+                        =empl.salary
+                    td
+                        a(href="../update/"+empl._id) Update
+                    td
+                        a(href="../view/"+empl._id) Delete
+    else
+        p No results found
